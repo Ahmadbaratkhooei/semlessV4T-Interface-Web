@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web API Seamlessm4tv2 Demo</title>
+    <!-- Use /static/ in href and src attributes -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Your existing HTML content -->
+    <div class="container">
+        <h2>Web Interface API for seamless-m4t-v2-large Model </h2>
+        <div id="dropdownContainer">
+            <label for="inputText">Input Text:</label>
+            <input type="text" id="inputText" name="inputText" placeholder="Enter text here...">
+            <br><br>
+            <label for="label1">Source Language:</label>
+            <!-- Include script.js before using its functions -->
+            <script src="/static/script.js"></script>
+            <script>
+                var langOptions = [
+                    { value: "eng", text: "English" },
+                    { value: "deu", text: "German" },
+                    { value: "pes", text: "Persian" }
+                ];
+                var srcDropdown = createDropdown("srcLang", langOptions, srcDropdownSelected);
+                document.getElementById("dropdownContainer").appendChild(srcDropdown);
+            </script>
+            <label for="label1">Target Language:</label>
+            <script>
+                var tgtDropdown = createDropdown("tgtLang", langOptions, tgtDropdownSelected);
+                document.getElementById("dropdownContainer").appendChild(tgtDropdown);
+            </script>
+            <br><br>
+
+            <!-- File upload for S2T and S2S -->
+            <label for="audioFileS2T">Upload Audio for Speech to Text:</label>
+            <input type="file" id="audioFileS2T" accept="audio/*" onchange="uploadAudioFile(event, 's2t')">
+            <br><br>
+            <label for="audioFileS2S">Upload Audio for Speech to Speech:</label>
+            <input type="file" id="audioFileS2S" accept="audio/*" onchange="uploadAudioFile(event, 's2s')">
+            <br><br>
+
+            <!-- Recording audio -->
+            <div class="button-container">
+                <button type="button" onclick="t2tTranslate('t2t')">Text to Text</button>
+                <button type="button" onclick="t2sTranslate('t2s')">Text to Speech</button>
+                <button type="button" onclick="startRecording()">Start Recording</button>
+                <button type="button" id="stopS2T" onclick="stopRecording(this.id)">Stop Recording for Speech to Text</button>
+                <button type="button" id="stopS2S" onclick="stopRecording(this.id)">Stop Recording for Speech to Speech</button>
+                
+                
+            </div>
+        </div>
+        <br>
+        <div id="result"></div>
+    </div>
+     
+</body>
+</html>
