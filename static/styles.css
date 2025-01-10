@@ -1,0 +1,128 @@
+:root {
+    /* Define reusable color variables for the theme */
+    --primary-color: #2c3e50; /* Dark blue for headings and accents */
+    --secondary-color: #3498db; /* Lighter blue for buttons and highlights */
+    --background-color: #ecf0f1; /* Light gray background for the body */
+    --text-color: #333; /* Dark gray for text */
+    --white: #ffffff; /* Pure white for containers and text */
+}
+
+* {
+    /* Universal selector for better layout consistency */
+    box-sizing: border-box; /* Include padding and borders in element size */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+body {
+    /* Styles for the overall page */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern sans-serif font */
+    background-color: var(--background-color); /* Set background color */
+    color: var(--text-color); /* Set default text color */
+    line-height: 1.6; /* Improve text readability */
+}
+
+.container {
+    /* Main container for page content */
+    max-width: 800px; /* Limit the width for readability */
+    margin: 2rem auto; /* Center container and add top/bottom spacing */
+    background: var(--white); /* White background for contrast */
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 2rem; /* Space inside the container */
+}
+
+header {
+    /* Header section styling */
+    text-align: center; /* Center align the text */
+    margin-bottom: 2rem; /* Add space below the header */
+}
+
+header h1 {
+    /* Styling for the main title */
+    color: var(--primary-color); /* Dark blue color */
+    margin-bottom: 0.5rem; /* Add space below the title */
+}
+
+.translation-controls {
+    /* Container for translation controls */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    gap: 1rem; /* Add spacing between elements */
+}
+
+.input-group, .language-selection, .file-upload {
+    /* Grouped controls with similar styles */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    gap: 0.5rem; /* Add smaller spacing between children */
+}
+
+input[type="text"], select, input[type="file"] {
+    /* Input fields styling */
+    width: 100%; /* Full width for responsiveness */
+    padding: 0.75rem; /* Add padding for touch-friendliness */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px; /* Smooth corners */
+    font-size: 1rem; /* Consistent font size */
+}
+
+.action-buttons {
+    /* Layout for buttons */
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Wrap buttons to the next line on small screens */
+    gap: 0.5rem; /* Add spacing between buttons */
+    justify-content: center; /* Center align the buttons */
+}
+
+button {
+    /* Button styling */
+    flex-grow: 1; /* Buttons grow to fill available space */
+    padding: 0.75rem; /* Add padding */
+    background-color: var(--secondary-color); /* Light blue background */
+    color: var(--white); /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Smooth corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+button:hover {
+    /* Button hover effect */
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.result-display {
+    /* Section for displaying results */
+    margin-top: 1.5rem; /* Add spacing above results */
+}
+
+.result-box {
+    /* Styling for the results container */
+    background-color: var(--background-color); /* Light gray background */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px; /* Smooth corners */
+    min-height: 100px; /* Ensure a minimum height */
+    padding: 1rem; /* Add padding inside */
+    text-align: center; /* Center align text */
+}
+
+footer {
+    /* Footer styling */
+    text-align: center; /* Center align the text */
+    margin-top: 1.5rem; /* Add space above the footer */
+    color: var(--primary-color); /* Dark blue text */
+    font-size: 0.9rem; /* Smaller font size */
+}
+
+@media (max-width: 600px) {
+    /* Responsive styles for small screens */
+    .container {
+        margin: 1rem; /* Reduce outer margin */
+        padding: 1rem; /* Reduce inner padding */
+    }
+
+    .action-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata and basic settings for the document -->
+    <meta charset="UTF-8"> <!-- Specifies the character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures the page is responsive -->
+    <title>Seamless M4T Translation Interface</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <div class="container"> <!-- Main container for the content -->
+        <header> <!-- Header section -->
+            <h1>Multilingual Translation Platform</h1> <!-- Main title -->
+            <p>Translate text, speech, and audio across multiple languages</p> <!-- Subtitle or description -->
+        </header>
+
+        <main> <!-- Main content area -->
+            <section class="translation-controls"> <!-- Section for translation controls -->
+                <div class="input-group"> <!-- Input group for text translation -->
+                    <label for="inputText">Input Text</label> <!-- Label for text input -->
+                    <input type="text" id="inputText" name="inputText" placeholder="Enter text to translate">
+                    <!-- Text input field -->
+                </div>
+
+                <div class="language-selection"> <!-- Language selection dropdowns -->
+                    <div class="language-dropdown">
+                        <label for="srcLang">Source Language</label> <!-- Label for source language -->
+                        <select id="srcLang" name="srcLang"></select> <!-- Dropdown for source language -->
+                    </div>
+                    <div class="language-dropdown">
+                        <label for="tgtLang">Target Language</label> <!-- Label for target language -->
+                        <select id="tgtLang" name="tgtLang"></select> <!-- Dropdown for target language -->
+                    </div>
+                </div>
+
+                <div class="file-upload"> <!-- File upload section -->
+                    <div class="audio-upload"> <!-- Audio upload for Speech-to-Text -->
+                        <label for="audioFileS2T">Speech to Text</label>
+                        <input type="file" id="audioFileS2T" accept="audio/*"> <!-- File input for audio -->
+                    </div>
+                    <div class="audio-upload"> <!-- Audio upload for Speech-to-Speech -->
+                        <label for="audioFileS2S">Speech to Speech</label>
+                        <input type="file" id="audioFileS2S" accept="audio/*"> <!-- File input for audio -->
+                    </div>
+                </div>
+
+                <div class="action-buttons"> <!-- Buttons for actions -->
+                    <button id="t2tButton">Text Translation</button> <!-- Button for Text-to-Text translation -->
+                    <button id="t2sButton">Text to Speech</button> <!-- Button for Text-to-Speech -->
+                    <button id="startRecording">Start Recording</button> <!-- Button to start recording -->
+                    <button id="stopS2T">Stop S2T Recording</button> <!-- Button to stop Speech-to-Text recording -->
+                    <button id="stopS2S">Stop S2S Recording</button> <!-- Button to stop Speech-to-Speech recording -->
+                </div>
+            </section>
+
+            <section class="result-display"> <!-- Section to display translation results -->
+                <div id="result" class="result-box">
+                    Translation results will appear here <!-- Placeholder text -->
+                </div>
+            </section>
+        </main>
+
+        <footer> <!-- Footer section -->
+            <p>Powered by Seamless M4T Translation Technology</p> <!-- Footer text -->
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>
